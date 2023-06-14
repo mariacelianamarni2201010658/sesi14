@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>JUDUL</h3>
+    <div>
+        <button type="button" id="C1">Luas persegi</button>
+        <button type="button" id="C2">Luas segitiga</button>
+    </div>
+
+    <div class="persegi">
+        <div>
+            Nilai panjang
+            <input type="number" id="PJ">
+
+        </div>
+        <div>
+            nilai lebar
+            <input type="number" id="LB">
+        </div>
+        <button type="button" id="HitungPersegi"> Hitung luas </button>
+
+    </div>
+
+    <div class="segi3">
+        <div>
+            Nilai alas
+            <input type="number" id="AL">
+
+        </div>
+        <div>
+            Nilai tinggi
+            <input type="number" id="TG">
+        </div>
+        <button type="button" id="HitungSegi3"> Hitung luas </button>
+        
+    </div>
+    <div class="hasil"></div>
+
+    <script src="jquery-3.7.0.min.js"></script>
+    <script>
+        $(function(){
+            $(".persegi").hide();
+            $(".segi3").hide();
+
+            $("#C1").click(function(){
+                $(".segi3").hide(1500);
+                $(".persegi").show(1500);
+                $(".hasil").html("");
+                $("h3").html("hitung luas persegi");
+            
+            });
+        $("#C2").click(function(){
+                $(".segi3").hide(1500);
+                $(".persegi").show(1500);
+                $(".hasil").html("");
+                $("h3").html("hitung luas segi3");
+
+
+
+            });
+            $("#HitungPersegi").click(function(){
+                let p = $("#PJ").val();
+                let L = $("#LB").val();
+
+                let LU = P*L;
+
+                let tx = " Hitung luas persegi dengan nilai panjang "+p;
+                tx +=" dan lebar "+l+" adalah:<br";
+                tx +=" Luas = Panjang x Lebar <br";
+                tx +=" = "+P+" x "+L+"<br";
+                tx +=" = "+LU+"<br";
+                tx += " jadi luasnya adalah "+LU;
+
+            })
+
+        });
+    </script>
+</body>
+</html>
